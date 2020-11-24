@@ -1,0 +1,70 @@
+<html>
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body background="/public/images/9.jpg">
+
+
+      <center>
+        <div class="container">
+          <h1>Hi Admin</h1>  
+        
+          
+          <a href="/admin/viewUsers" class="btn btn-primary" role="button">View Users</a>
+          <a href="/admin/logout" class="btn btn-primary" role="button">Logout</a>
+          <!-- <a href="/admin/listings" class="btn btn-primary" role="button">View Listings</a> -->
+
+        </div>
+          <% include ./partials/scripts %>   
+      </center>
+
+      <br>
+       
+            <% snapshot.forEach(doc => { %>
+                <%if(doc.data()){%>
+                    <div class="card mb-3" style="max-width: 500px; margin-left: 30%">
+                            <div class="row no-gutters">
+                              
+                              <div class="col-md-10">
+                                    <!-- <div class="card-body">
+                                      <h2 class="card-title"><%= doc.data().price %>$</h2>
+                                      <p class="card-text"><%= doc.data().street %> <%= doc.data().city %> <%= doc.data().state %> <%= doc.data().zipcode %></p>
+                                      </div> -->
+
+                                      <div class="card-body">
+                                        <p class="card-text"><a href="/contact?zip=<%=doc.data().zipcode%>"><img src="/public/images/<%= doc.data().image%>" class="card-img"></a></p>
+                                       <!-- <div class="col-md-8">
+                                             <div class="card-body"> -->
+                                               <h2 class="card-title">Price : <%= doc.data().price %>$</h2>
+                                               <p class="card-text">Street : <%= doc.data().street %> </p>
+                                               <p class="card-text">City : <%= doc.data().city %> </p>
+                                               <p class="card-text">State : <%= doc.data().state %> </p>
+                                               <p class="card-text">Zipcode : <%= doc.data().zipcode %></p>
+                                      
+                             
+                             
+                             
+               
+                  </div>
+
+
+                                      <form action="/admin/delete/listings" method="POST">
+                                        <input type="hidden"  name="id" value="<%= doc.id %>">
+                                        <button type ="submit"   class="btn btn-danger">Delete</button>
+                                     </form>
+                                  </div>
+                                </div>
+                         </div>
+                    
+                    
+                    <%}%>
+          <% }) %>
+    
+    </body>
+</html>

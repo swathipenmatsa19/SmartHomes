@@ -1,0 +1,76 @@
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <% include ./partials/header %>
+
+  <title>Sign In</title>
+  <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">SID Residencies</a>
+        <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 62%">
+            <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            My account
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/updateUser">Edit </a>
+                            <a class="dropdown-item" href="/viewProfile">View Profile</a>
+                            <a class="dropdown-item" href="/delete">Delete</a>
+                            <a class="dropdown-item" href="/logout">Logout</a>
+                          </div>
+                        </li>
+                        <!-- <li class="nav-item active">
+                            <a class="nav-link" href="/sell">Buy</a>
+                        </li> -->
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/hello">Buy</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/">Sell</a>
+                        </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </header>
+</head>
+
+<body background="/public/images/9.jpg">
+  <div class="container">
+    
+    <form action="/createUser" method="POST" style="margin-left: 35% ; margin-right: 35%; margin-top: 10%">
+
+      <h1 align="center">Update Profile</h1>
+        <div class="form-group">
+            <label for="name">Enter Name</label>
+            <input type="text" class="form-control" name="name" placeholder="First name">
+        </div>
+        <div class="form-group">
+        <label for="email">Email ID</label>
+          <input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" id="password"
+             placeholder="password"> 
+          </div>
+          <div class="form-group">
+          <label for="phoneNumber">Mobile Number</label>
+          <input type="text" class="form-control input-medium bfh-phone" name="mobile" data-format="+1 (ddd) ddd-dddd" placeholder="Enter Mobile number">
+        </div>
+        <button type="submit" class="btn btn-primary">Update </button>
+      </form>
+    </div>
+
+
+  <% include ./partials/scripts %>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <h1>List of users</h1>
+        <table border=1>
+            <% snapshot.forEach(doc => { %>
+               <tr>
+                   <td><%= doc.id %></td>
+                   <td><%= doc.data().title %></td>
+                   <td><%= doc.data().price %></td>
+               </tr>
+            <% }) %>
+        </table>
+    </body>
+</html>
